@@ -1,19 +1,13 @@
 
 module.exports = {
-  mode: 'universal',
+  
   /*
   ** Headers of the page
   */
   router: {
     base: '/',
     linkExactActiveClass: 'active',
-    scrollBehavior: (to) => {
-      if (to.hash) {
-        return {selector: to.hash}
-      } else {
-        return { x: 0, y: 0 }
-      }
-    }
+    
   },
   head: {
     title: process.env.npm_package_name || '',
