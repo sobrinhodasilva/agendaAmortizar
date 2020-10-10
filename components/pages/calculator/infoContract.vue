@@ -3,18 +3,21 @@
   <div>
     <h4 class="card-title">Informações do Contrato</h4>
     <div class="row">
-      <fg-input name="prazoRemanescente" class="col-sm-6 col-12" label="Prazo Remanescente" placeholder="193" v-model="contract.prazoRemanescente" type="number">
-      </fg-input>
-      <money v-model="contract.saldoDevedor" label="Saldo Devedor" v-bind="money" class="form-input input-lg" name="saldoDevedor"></money>
-
+      <div class="col">
+        <fg-input name="prazoRemanescente" label="Prazo Remanescente" placeholder="193" :value="contract.prazoRemanescente" type="number">
+        </fg-input>
+        <money name="saldoDevedor" :value="contract.saldoDevedor" label="Saldo Devedor" v-bind="money" class="form-input input-lg"></money>
+      </div>
     </div>
     <div class="row">
-      <fg-input name="taxaJuros" class="col-sm-4 col-12" label="Taxa de Juros" placeholder="8,65" v-model="contract.taxaJuros" type="number">
-      </fg-input>
-      <fg-input name="taxaMensais" class="col-sm-4 col-12" label="Taxas Mensais" placeholder="25,00" v-model="contract.taxaMensal" type="number">
-      </fg-input>
-      <fg-input name="seguro" class="col-sm-4 col-12" label="Seguro" placeholder="65,00" v-model="contract.seguro" type="number">
-      </fg-input>
+      <div class="col">
+        <fg-input name="taxaJuros" label="Taxa de Juros" placeholder="8,65" :value="contract.taxaJuros" type="number">
+        </fg-input>
+        <fg-input name="taxaMensais" label="Taxas Mensais" placeholder="25,00" :value="contract.taxaMensal" type="number">
+        </fg-input>
+        <fg-input name="seguro" label="Seguro" placeholder="65,00" :value="contract.seguro" type="number">
+        </fg-input>
+      </div>
     </div>
   </div>
 </card>
