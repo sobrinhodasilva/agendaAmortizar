@@ -5,8 +5,8 @@
     <div class="row">
       <fg-input name="prazoRemanescente" class="col-sm-6 col-12" label="Prazo Remanescente" placeholder="193" v-model="contract.prazoRemanescente" type="number">
       </fg-input>
-      <fg-input name="saldoDevedor" class="col-sm-6 col-12" label="Saldo Devedor" placeholder="R$ 155765,65" v-model="contract.saldoDevedor">
-      </fg-input>
+      <money v-model="contract.saldoDevedor" label="Saldo Devedor" v-bind="money" class="form-input input-lg" name="saldoDevedor"></money>
+
     </div>
     <div class="row">
       <fg-input name="taxaJuros" class="col-sm-4 col-12" label="Taxa de Juros" placeholder="8,65" v-model="contract.taxaJuros" type="number">
@@ -25,7 +25,8 @@ import {
   Card,
   Button,
   FormGroupInput as FgInput,
-  Checkbox
+  Checkbox,
+  Money
 } from '@/components';
 
 import {
@@ -39,7 +40,8 @@ export default {
   name: 'InfoContract',
   components: {
     Card,
-    FgInput
+    FgInput,
+    Money
   },
   computed: {
     contract() {

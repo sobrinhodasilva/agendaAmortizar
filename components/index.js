@@ -27,7 +27,7 @@ import Pagination from './Pagination.vue'
 
 import Comment from './Comments/Comment'
 import InfoSection from './InfoSection'
-
+import Money from './Inputs/Money.vue'
 export {
   Alert,
   Checkbox,
@@ -53,5 +53,6 @@ export {
   Collapse,
   CollapseItem,
   Comment,
-  InfoSection
+  InfoSection,
+  Money
 }
