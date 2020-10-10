@@ -27,6 +27,7 @@ export default {
   },
   data() {
     return {
+      focused: false,
       price: 0,
       money: {
         decimal: ',',
@@ -36,6 +37,30 @@ export default {
         precision: 2,
         masked: false
       }
+    }
+  },
+  computed: {
+    listeners() {
+      return {
+        ...this.$listeners,
+        input: this.updateValue,
+        focus: this.onFocus,
+        blur: this.onBlur
+      }
+    },
+  },
+  methods: {
+    updateValue(evt) {
+      let value = evt.target.value;
+      this.$emit('input', value);
+    },
+    onFocus(value) {
+      this.focused = true;
+      this.$emit('focus', value);
+    },
+    onBlur(value) {
+      this.focused = false;
+      this.$emit('blur', value);
     }
   }
 }
