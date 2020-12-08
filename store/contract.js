@@ -1,15 +1,18 @@
+
+
+
 export const state = () => ({
   infos: {
-    prazoRemanescente: null,
-    saldoDevedor: null,
-    taxaJuros: null,
-    taxaMensal: null,
-    seguro: null,
+    prazoRemanescente: 0,
+    saldoDevedor: 10,
+    taxaJuros: 20,
+    taxaMensal: 30,
+    seguro: 40,
   }
 })
 
 export const mutations = {
   update (state, payload){
-      //Object.assign(state.infos.attributes, playload.attributes)
+    Object.assign(state.infos, payload)
   },
 }

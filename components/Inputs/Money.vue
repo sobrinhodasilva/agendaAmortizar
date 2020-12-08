@@ -1,10 +1,10 @@
 <template>
 <div class="form-group">
-  <label v-if="label" :class="labelClasses">
+  <label v-if="label">
     {{label}}
     <span v-if="required">*</span>
   </label>
-  <money v-model="price" v-bind="money" class="form-control"></money>
+  <money :value="value" v-on="listeners" v-bind="money" class="form-control"></money>
   <div class="text-danger invalid-feedback" style="display: block;" :class="{'mt-2': hasIcon}" v-if="error">
     {{ error }}
   </div>
@@ -23,12 +23,13 @@ export default {
   props: {
     required: Boolean,
     label: String,
-    error: String
+    error: String,
+    value: Number,
   },
   data() {
     return {
       focused: false,
-      price: 0,
+      price: 30,
       money: {
         decimal: ',',
         thousands: '.',
@@ -50,8 +51,7 @@ export default {
     },
   },
   methods: {
-    updateValue(evt) {
-      let value = evt.target.value;
+    updateValue(value) {
       this.$emit('input', value);
     },
     onFocus(value) {

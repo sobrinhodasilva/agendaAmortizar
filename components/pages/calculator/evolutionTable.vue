@@ -46,14 +46,34 @@ export default {
   data() {
     return {
       tableData: [{
-        id: 1,
-        mesano: '10/2020',
-        amortizacao: 852.23,
-        jurosValor: 1379.26,
-        outrosEncargos: 90.67,
-        prestacao: 2049.62
+          id: 1,
+          mesano: '10/2020',
+          amortizacao: 852.23,
+          jurosValor: 1379.26,
+          outrosEncargos: 90.67,
+          prestacao: 2049.62
 
-      }]
+        },
+        {
+          id: 2,
+          mesano: '10/2020',
+          amortizacao: 852.23,
+          jurosValor: 1379.26,
+          outrosEncargos: 90.67,
+          prestacao: 2049.62
+
+        },
+        {
+          id: 3,
+          mesano: '10/2020',
+          amortizacao: 852.23,
+          jurosValor: 1379.26,
+          outrosEncargos: 90.67,
+          prestacao: 2049.62
+
+        }
+
+      ]
     }
   },
 }
